@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Tracker</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">TaskFlow<span>.</span></div>
+        <p>Plan your day. Get things done.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <h1>My Task Manager</h1>
+                <p>Stay organized and make every day productive.</p>
+            </div>
+            <div class="today" id="today"></div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <p>Total Tasks</p>
+                <h2 id="totalTasks">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>Pending</p>
+                <h2 id="pendingTasks">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>Completed</p>
+                <h2 id="completedTasks">0</h2>
+            </div>
+        </section>
+
+        <section class="task-form card">
+            <h2>Add a New Task</h2>
+
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskTitle">Task Name</label>
+                    <input
+                        type="text"
+                        id="taskTitle"
+                        placeholder="e.g. Complete Java assignment"
+                        maxlength="120"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="taskDate">Deadline</label>
+                        <input type="date" id="taskDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskPriority">Priority</label>
+                        <select id="taskPriority">
+                            <option value="Low">Low</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="add-btn">+ Add Task</button>
+            </form>
+        </section>
+
+        <section class="task-section">
+            <div class="task-heading">
+                <h2>My Tasks</h2>
+                <select id="taskFilter" aria-label="Filter tasks">
+                    <option value="all">All Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+
+            <div id="taskList" class="task-list"></div>
+        </section>
+
+        <section class="progress-card card">
+            <div class="progress-heading">
+                <h2>Daily Progress</h2>
+                <span id="progressText">0%</span>
+            </div>
+            <div class="progress-track">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <p>Keep going! Every completed task counts.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>TaskFlow Productivity Tracker | Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>
